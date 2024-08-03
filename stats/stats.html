@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="stats.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <main>
+
+    <div class="top">
+      <div class="title">Player Stats</div>
+      <div class="home">
+        <i class='bx bx-arrow-back' onclick="home()"></i>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Matches</div>
+        <div class="stat" id="matchesStat"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Wins</div>
+        <div class="stat" id="winsStat"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Words</div>
+        <div class="stat" id="wordsPlacedStat"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Letters</div>
+        <div class="stat" id="lettersPlacedStat"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Skips Used</div>
+        <div class="stat" id="skipsUsedStat"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">0 Skip Wins</div>
+        <div class="stat" id="skiplessWinsStat"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="stats.js"></script>
+</body>
+</html>
