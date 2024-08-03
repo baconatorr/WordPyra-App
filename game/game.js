@@ -214,7 +214,7 @@ function rowCheck(Id){
 
 
 function Get(word) {
-  if(word == "IS" || word == "BE"){
+  if(word == "IS" || word == "BE" || word == "NET"){
     animate("correct");
     return;
   }
