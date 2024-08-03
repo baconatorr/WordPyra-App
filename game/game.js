@@ -39,7 +39,7 @@ if (!localStorage.getItem('visited')) {
 }
 
 function home(){
-    document.location.href = '/WordPyra-App/index'
+    document.location.href = 'https://wordpyra.com'
 }
 
 function openModal(id){
