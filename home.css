@@ -1,0 +1,92 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'League Spartan', sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  width: 90vw;
+}
+
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: clamp(3.125rem, 0.5352rem + 13.8122vw, 9.375rem);
+  color: #333;
+  margin: 40px 0;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: pulse1 ease 2s infinite;
+}
+
+.middle-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.play-button button,
+.stat-button button {
+  font-size: clamp(1.5rem, 0.3352rem + 5.8122vw, 3.125rem);
+  width: calc(clamp(1.5rem, 0.3352rem + 5.8122vw, 3.125rem) * 6);
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #FF9A8B, #FF6F61);
+  border: none;
+  border-radius: 15px;
+  padding: 20px 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.play-button button:active,
+.stat-button button:active {
+  transform: scale(.95);
+  background: linear-gradient(135deg, #FF8B7A, #FF5C5C);
+}
+
+
+@keyframes pulse1 {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	30% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
