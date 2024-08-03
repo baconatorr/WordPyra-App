@@ -21,5 +21,5 @@ function loadStats(){
 }
 
 function home(){
-  document.location.href = '/home/index.html';
+  document.location.href = '/WordPyra-App/home/index.html';
 }
