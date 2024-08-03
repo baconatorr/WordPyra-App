@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.wordpyra.twa",
+        "sha256_cert_fingerprints": ["5A:57:42:3D:9F:98:A7:9F:DC:B4:97:18:EE:07:4A:21:62:62:BD:5C:64:5F:9E:2F:78:F3:D8:AC:B2:D3:45:07"]
+      }
+    }]
