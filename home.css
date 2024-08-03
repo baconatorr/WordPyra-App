@@ -53,7 +53,8 @@ main {
 }
 
 .play-button button,
-.stat-button button {
+.stat-button button,
+.wall-button button {
   font-size: clamp(1.5rem, 0.3352rem + 5.8122vw, 3.125rem);
   width: calc(clamp(1.5rem, 0.3352rem + 5.8122vw, 3.125rem) * 6);
   font-weight: bold;
@@ -67,8 +68,14 @@ main {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.wall-button button{
+  font-size: calc(clamp(1.5rem, 0.3352rem + 5.8122vw, 3.125rem) / 2);
+}
+
+
 .play-button button:active,
-.stat-button button:active {
+.stat-button button:active,
+.wall-button button:active {
   transform: scale(.95);
   background: linear-gradient(135deg, #FF8B7A, #FF5C5C);
 }
