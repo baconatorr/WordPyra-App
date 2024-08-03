@@ -39,7 +39,7 @@ if (!localStorage.getItem('visited')) {
 }
 
 function home(){
-    document.location.href = '/home/home.html'
+    document.location.href = '/home/index.html'
 }
 
 function openModal(id){
