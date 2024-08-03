@@ -21,5 +21,5 @@ function loadStats(){
 }
 
 function home(){
-  document.location.href = '/home/home.html';
+  document.location.href = '/home/index.html';
 }
