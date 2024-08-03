@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="game.css">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+</head>
+<body>
+
+  <dialog id="how">
+    <div id="welcome">
+        <img src="wave.png">
+        <h1>Welcome to WordPyra</h1>
+    </div>
+    <h2>How to play?</h2>
+    <p>Your aim in Word Pyramid is to form words in each row of the pyramid using the provided random letter. Tap the square in the pyramid to place the letter.</p>
+    <button onclick="closeModal('how')" id="close">Close</button>
+  </dialog>
+
+
+  <div class="top">
+    <div class="title">
+      WORDPYRA
+    </div>
+    <div class="left">
+      <div class="how">
+        <i class='bx bx-question-mark' onclick="openModal('how')"></i>
+      </div>
+      <div class="home">
+        <i class='bx bx-arrow-back' onclick="home()"></i>
+    </div>
+    </div>
+  </div>
+  <audio id="add" src="add.mp3"></audio>
+  <audio id="skip" src="skip.mp3"></audio>
+  <div class="pyramid">
+    
+    <div class="row" id="row1">
+        <div class="space" id="r1s1"></div>
+    </div>
+    <div class="row" id="row2">
+        <div class="space" id="r2s1"></div>
+        <div class="space" id="r2s2"></div>
+    </div>
+    <div class="row" id="row3">
+        <div class="space" id="r3s1"></div>
+        <div class="space" id="r3s2"></div>
+        <div class="space" id="r3s3"></div>
+    </div>
+    <div class="row" id="row4">
+        <div class="space" id="r4s1"></div>
+        <div class="space" id="r4s2"></div>
+        <div class="space" id="r4s3"></div>
+        <div class="space" id="r4s4"></div>
+    </div>
+    <div class="row" id="row5">
+        <div class="space" id="r5s1"></div>
+        <div class="space" id="r5s2"></div>
+        <div class="space" id="r5s3"></div>
+        <div class="space" id="r5s4"></div>
+        <div class="space" id="r5s5"></div>
+    </div>
+
+    <div class="bottom">
+      <div class="restart">
+          <i class='bx bx-refresh' onclick="refresh()"></i>
+      </div>
+      <div class="letter">
+          <p id="letter"></p>
+      </div>
+      <div class="skip">
+          <i class='bx bxs-skip-next-circle' onclick="skip()"></i>
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+<div class="skips">
+  <span id="skip-counter">3</span> SKIPS REMAINING
+</div>
+<script src="game.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+</body>
+</html>
