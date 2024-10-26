@@ -201,7 +201,14 @@ body{
   }
 }
 
-.skips{
+.very-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skips, .next-letter{
   font-size: clamp(0.9375rem, 0.2901rem + 3.453vw, 2.5rem);
   text-align: center;
   background-color: rgba(255, 255, 255, 1);
@@ -209,12 +216,18 @@ body{
   padding: 20px 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  width: 50vw;
-  margin: 5vh;
+  margin-top: 5vh;
   color: #333;
 }
 
-#skip-counter{
+.skips{
+  width: 40vw;
+}
+.next-letter{
+  width: 30vw;
+}
+
+#skip-counter, #next-letter-text{
   font-weight: bold;
 }
 

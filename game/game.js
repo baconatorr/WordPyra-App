@@ -1,5 +1,3 @@
-
-
 const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 const vowels = ['A', 'E', 'I', 'O', 'U']
 const t1 = ['T', 'S', 'R'];
@@ -8,10 +6,12 @@ const t3 = ['D', 'L','K', 'B'];
 const t4 = ['M', 'W', 'F', 'G'];
 const t5 = ['Y', 'P', 'V'];
 const t6 = ['J', 'X', 'Q', 'Z'];
+let index = 0;
 
 let vowelCount;
 let chosenLetters = [];
 let letter = "";
+let nextLetter;
 let skips = 3;
 let randomIndex;
 let currentCheck;
@@ -105,65 +105,85 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function generateList(){
-  vowelCount = Math.floor(Math.random() * (3) + 6); 
-  console.log(vowelCount)
-  let totalConsonants = 16 - vowelCount;
-  let t1Count = Math.floor(Math.max(1, totalConsonants - 6))
-  let t2Count = Math.floor(Math.max(1, totalConsonants - 6))
-  let t3Count = Math.floor(Math.max(1, totalConsonants - 8))
-  let t4Count = Math.floor(Math.max(1, totalConsonants - 9))
-  let t5Count = Math.floor(Math.max(1, totalConsonants - 10))
-  let t6Count = Math.floor(Math.max(1, totalConsonants - 11))
-  while(t1Count + t2Count + t3Count + t4Count + t5Count + t6Count > totalConsonants){
-      if(t6Count > 0){
-          t6Count--;
-      } else if(t5Count > 0){
-          t5Count--;
-      } else {
-          break;
-      }
-  }
+ choseLetters();
+ shuffleLetters();
+}
 
-  for(let i = 0; i < vowelCount; i++){
-      chosenLetters.push(vowels[(Math.floor(Math.random() * vowels.length))])
-  }
-  for(let i = 0; i < t1Count; i++){
-      chosenLetters.push(t1[(Math.floor(Math.random() * t1.length))])
-  }
-  for(let i = 0; i < t2Count; i++){
-      chosenLetters.push(t2[(Math.floor(Math.random() * t2.length))])
-  }
-  for(let i = 0; i < t3Count; i++){
-      chosenLetters.push(t3[(Math.floor(Math.random() * t3.length))])
-  }
-  for(let i = 0; i < t4Count; i++){
-      chosenLetters.push(t4[(Math.floor(Math.random() * t4.length))])
-  }
-  for(let i = 0; i < t5Count; i++){
-      chosenLetters.push(t5[(Math.floor(Math.random() * t5.length))])
-  }
-  for(let i = 0; i < t6Count; i++){
-      chosenLetters.push(t6[(Math.floor(Math.random() * t6.length))])
-  }
+function choseLetters(){
+    vowelCount = Math.floor(Math.random() * (3) + 6); 
+    console.log(vowelCount)
+    let totalConsonants = 16 - vowelCount;
+    let t1Count = Math.floor(Math.max(1, totalConsonants - 6))
+    let t2Count = Math.floor(Math.max(1, totalConsonants - 6))
+    let t3Count = Math.floor(Math.max(1, totalConsonants - 8))
+    let t4Count = Math.floor(Math.max(1, totalConsonants - 9))
+    let t5Count = Math.floor(Math.max(1, totalConsonants - 10))
+    let t6Count = Math.floor(Math.max(1, totalConsonants - 11))
+    while(t1Count + t2Count + t3Count + t4Count + t5Count + t6Count > totalConsonants){
+        if(t6Count > 0){
+            t6Count--;
+        } else if(t5Count > 0){
+            t5Count--;
+        } else {
+            break;
+        }
+    }
+  
+    for(let i = 0; i < vowelCount; i++){
+        chosenLetters.push(vowels[(Math.floor(Math.random() * vowels.length))])
+    }
+    for(let i = 0; i < t1Count; i++){
+        chosenLetters.push(t1[(Math.floor(Math.random() * t1.length))])
+    }
+    for(let i = 0; i < t2Count; i++){
+        chosenLetters.push(t2[(Math.floor(Math.random() * t2.length))])
+    }
+    for(let i = 0; i < t3Count; i++){
+        chosenLetters.push(t3[(Math.floor(Math.random() * t3.length))])
+    }
+    for(let i = 0; i < t4Count; i++){
+        chosenLetters.push(t4[(Math.floor(Math.random() * t4.length))])
+    }
+    for(let i = 0; i < t5Count; i++){
+        chosenLetters.push(t5[(Math.floor(Math.random() * t5.length))])
+    }
+    for(let i = 0; i < t6Count; i++){
+        chosenLetters.push(t6[(Math.floor(Math.random() * t6.length))])
+    }
+  
+    if(vowelCount == 6){
+        chosenLetters.pop()
+    }
+}
 
-  if(vowelCount == 6){
-      chosenLetters.pop()
-  }
-  console.log(chosenLetters);
+function shuffleLetters(){
+    let currentIndex = chosenLetters.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [chosenLetters[currentIndex], chosenLetters[randomIndex]] = [
+        chosenLetters[randomIndex], chosenLetters[currentIndex]];
+    }
+    console.log(chosenLetters);
 }
 
 function generateLetter() {
-  randomIndex = Math.floor(Math.random() * chosenLetters.length)
-  console.log(randomIndex);
-  letter = chosenLetters[randomIndex];
+  letter = chosenLetters[index];
+  nextLetter = chosenLetters[index + 1];
   if(letter == undefined){
       letter = letters[Math.floor(Math.random() * letters.length)]
   }
-  console.log(letter);
   displayLetter();
 }
 
 function displayLetter(){
+    //diplay current letter
       const display = document.getElementById("letter");
       display.innerText = letter;
       let letterElement = document.querySelector('.letter');
@@ -171,6 +191,9 @@ function displayLetter(){
       void letterElement.offsetWidth; 
       letterElement.style.animation = 'pop-in 0.2s ease'; 
       chosenLetters.splice(randomIndex, 1)
+      //displayt next letter
+      const nextLetterText = document.getElementById("next-letter-text");
+      nextLetterText.innerText = nextLetter;
 }
 
 function skip(){
