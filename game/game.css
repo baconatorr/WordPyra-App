@@ -141,6 +141,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  gap: 2px;
 }
 
 .bottom i{
@@ -168,7 +169,7 @@ body{
   align-items: center;
   justify-content: center;
 }
-.letter{
+.letter, .next-letter{
   width: clamp(3.75rem, 2.1961rem + 8.2873vw, 7.5rem); /*60-120*/
   height: clamp(3.75rem, 2.1961rem + 8.2873vw, 7.5rem);
   background-color: rgba(255, 255, 255, 0.8);
@@ -183,7 +184,15 @@ body{
   color: #333;
 }
 
-.letter p{
+.letter{
+
+}
+.next-letter{
+  scale: 0.7;
+  opacity: 0.7;
+}
+
+.letter p, #next-letter-text{
   text-align: center;
   font-size: clamp(1.875rem, 1.0981rem + 4.1436vw, 3.75rem);
   margin-bottom: 0;
@@ -201,6 +210,16 @@ body{
   }
 }
 
+@keyframes right-in{
+  from{
+      transform: translateX(30%);
+  }
+  to {
+      transform: translateX(0%);
+  }
+}
+
+
 .very-bottom{
   display: flex;
   align-items: center;
@@ -208,7 +227,7 @@ body{
   gap: 10px;
 }
 
-.skips, .next-letter{
+.skips{
   font-size: clamp(0.9375rem, 0.2901rem + 3.453vw, 2.5rem);
   text-align: center;
   background-color: rgba(255, 255, 255, 1);
@@ -223,13 +242,7 @@ body{
 .skips{
   width: 40vw;
 }
-.next-letter{
-  width: 30vw;
-}
 
-#skip-counter, #next-letter-text{
-  font-weight: bold;
-}
 
 dialog {
   background-color: #ffffff;
@@ -314,5 +327,4 @@ dialog button:hover {
     margin-top: 4vh; 
   }
 }
-
 

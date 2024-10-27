@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
           id.appendChild(text);
           generateLetter();
           
+          
           rowCheck(squareId);
       }
   }
@@ -154,6 +155,10 @@ function choseLetters(){
     if(vowelCount == 6){
         chosenLetters.pop()
     }
+
+    for(let i = 0; i < 4; i++){
+        chosenLetters.push(letters[Math.floor(Math.random() * letters.length)]);
+    }
 }
 
 function shuffleLetters(){
@@ -176,12 +181,6 @@ function shuffleLetters(){
 function generateLetter() {
   letter = chosenLetters[index];
   nextLetter = chosenLetters[index + 1];
-  if(letter == undefined){
-      letter = letters[Math.floor(Math.random() * letters.length)]
-  }
-  if(nextLetter == undefined){
-    nextLetter = letters[Math.floor(Math.random() * letters.length)]
-}
   displayLetter();
 }
 
@@ -192,11 +191,15 @@ function displayLetter(){
       let letterElement = document.querySelector('.letter');
       letterElement.style.animation = 'none';
       void letterElement.offsetWidth; 
-      letterElement.style.animation = 'pop-in 0.2s ease'; 
+      letterElement.style.animation = 'right-in 0.2s ease'; 
       chosenLetters.splice(randomIndex, 1)
       //displayt next letter
       const nextLetterText = document.getElementById("next-letter-text");
       nextLetterText.innerText = nextLetter;
+      let nextLetterElement = document.querySelector('.next-letter');
+      nextLetterElement.style.animation = 'none';
+      void nextLetterElement.offsetWidth; 
+      nextLetterElement.style.animation = 'pop-in 0.2s ease'; 
 }
 
 function skip(){
