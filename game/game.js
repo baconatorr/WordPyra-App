@@ -179,6 +179,9 @@ function generateLetter() {
   if(letter == undefined){
       letter = letters[Math.floor(Math.random() * letters.length)]
   }
+  if(nextLetter == undefined){
+    nextLetter = letters[Math.floor(Math.random() * letters.length)]
+}
   displayLetter();
 }
 
