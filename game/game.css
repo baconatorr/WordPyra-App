@@ -322,7 +322,7 @@ dialog button:hover {
     height: clamp(3rem, 1.8rem + 6vw, 6rem);
   }
 
-  .skips, .next-letter  {
+  .skips{
     font-size: clamp(0.875rem, 0.25rem + 3.5vw, 2.25rem); 
     margin-top: 4vh; 
   }
