@@ -243,7 +243,7 @@ function rowCheck(Id){
 
 
 function Get(word) {
-  if(word == "IS" || word == "BE" || word == "NET"){
+  if(word == "IS" || word == "BE" || word == "NET" || word == "CUE" || word == "TOW"){
     animate("correct");
     return;
   }
